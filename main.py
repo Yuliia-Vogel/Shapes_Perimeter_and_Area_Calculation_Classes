@@ -1,7 +1,6 @@
 import sys
 
-# from shapes_classes import Circle, Rectangle, Square
-from shapes_classes import Shape
+from shapes.base import Shape
 
     
 def get_shape_classes():
