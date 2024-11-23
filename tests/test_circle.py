@@ -1,14 +1,20 @@
+import pytest
+
 from shapes.circle import Circle
 
-def test_perimeter():
-    c = Circle()
+
+@pytest.fixture
+def circle():
+    c = Circle() # фікстура
     c.parse(["Center", "1", "1", "Radius", "3"])
-    perimeter = c.get_perimeter()
+    return c
+
+
+def test_perimeter(circle):
+    perimeter = circle.get_perimeter()
     assert perimeter == 18.85
 
 
-def test_area():
-    c = Circle()
-    c.parse(["Center", "1", "1", "Radius", "3"])
-    area = c.get_area()
+def test_area(circle):
+    area = circle.get_area()
     assert area == 28.27
